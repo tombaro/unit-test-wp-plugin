@@ -1,11 +1,14 @@
 <?php
 /**
- * PHPUnit bootstrap file
+ * PHPUnit bootstrap.php file
  *
- * @package Sample_Plugin
+ * @package         Sample_Plugin
  */
 
-require_once( dirname( __DIR__ ) . '/vendor/autoload.php' );
+/**
+ * Require file.
+ */
+require_once dirname( __DIR__ ) . '/vendor/autoload.php';
 
 $_tests_dir = getenv( 'WP_TESTS_DIR' );
 if ( ! $_tests_dir ) {

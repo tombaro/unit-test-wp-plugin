@@ -18,6 +18,7 @@ namespace UnitTestDemo;
  * Get a plugin option from the WordPress database.
  *
  * @param string $name The option to search for.
+ * @param array  $default The default value.
  *
  * @return mixed
  */

@@ -35,6 +35,7 @@ class DemoTest extends \PHPUnit_Framework_TestCase {
 	 * @return void
 	 */
 	public function test_demo_get_option_casts_array() {
+
 		$get_option = $this->getFunctionMock( 'UnitTestDemo', 'get_option' );
 		$get_option->expects( $this->once() )
 					->with( $this->equalTo( 'demo_foo' ), $this->identicalTo( array() ) )

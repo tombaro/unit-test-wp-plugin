@@ -1,8 +1,8 @@
 <?php
 /**
- * PHPUnit bootstrap.php file
+ * PHPUnit bootstrap file
  *
- * @package         Sample_Plugin
+ * @package Sample_Plugin
  */
 
 /**

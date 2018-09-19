@@ -14,20 +14,35 @@
 
 namespace UnitTestDemo;
 
-/**
- * Get a plugin option from the WordPress database.
- *
- * @param string $name The option to search for.
- * @param array  $default The default value.
- *
- * @return mixed
- */
-function demo_get_option( $name, $default = null ) {
-	$option = get_option( 'demo_' . $name, $default );
 
-	if ( is_array( $default ) && ! is_array( $option ) ) {
-		$option = (array) $option;
+/**
+ * Class for plugin unit test.
+ */
+class Sample_Plugin {
+
+	/**
+	 * Construct class.
+	 */
+	public function __construct() {
 	}
 
-	return $option;
+	/**
+	 * Get a plugin option from the WordPress database.
+	 *
+	 * @param string $name The option to search for.
+	 * @param array  $default The default value.
+	 *
+	 * @return mixed
+	 */
+	public function demo_get_option( $name, $default = null ) {
+		$option = get_option( 'demo_' . $name, $default );
+
+		if ( is_array( $default ) && ! is_array( $option ) ) {
+			$option = (array) $option;
+		}
+
+		return $option;
+	}
 }
+
+$sample_plugin = new Sample_Plugin();

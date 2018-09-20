@@ -11,13 +11,11 @@ branches:
   only:
     - master
 
-php:
-  - 5.6
-  - 7.2
-
-env:
-  - WP_VERSION=latest WP_MULTISITE=0
-  - WP_VERSION=4.9.8 WP_MULTISITE=0
+# Cache composer dependencies
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
 
 matrix:
   include:
@@ -26,18 +24,16 @@ matrix:
     - php: 5.6
       env: WP_VERSION=latest
 
-install:
-  - composer install --no-dev
-  - composer require php-mock/php-mock-phpunit
-
 before_script:
   - bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - |
     if [[ ${TRAVIS_PHP_VERSION:0:2} == "7." ]]; then
       composer global require "phpunit/phpunit=5.7.*"
+      composer require "php-mock/php-mock-phpunit=2.*"
     else
       composer global require "phpunit/phpunit=4.8.*"
+      composer require "php-mock/php-mock-phpunit=1.*"
     fi
   - |
     composer global require wp-coding-standards/wpcs

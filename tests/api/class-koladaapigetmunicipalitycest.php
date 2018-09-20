@@ -1,4 +1,9 @@
 <?php
+/**
+ * Test class for API.
+ *
+ * @package Sample_Plugin
+ */
 
 /**
  * Undocumented class
@@ -10,8 +15,7 @@ class KoladaApiGetMunicipalityCest {
 	 * @param ApiTester $i Our user.
 	 * @return void
 	 */
-	public function _before( ApiTester $i )	{
-	}
+	public function _before( ApiTester $i ) {}
 
 	/**
 	 * Undocumented function
@@ -19,8 +23,7 @@ class KoladaApiGetMunicipalityCest {
 	 * @param ApiTester $i Our user.
 	 * @return void
 	 */
-	public function _after( ApiTester $i) {
-	}
+	public function _after( ApiTester $i ) {}
 
 	// Our tests.
 
@@ -38,9 +41,9 @@ class KoladaApiGetMunicipalityCest {
 		$i->seeResponseContainsJson(
 			[
 				'values' => [
-					'id' => '1281',
+					'id'    => '1281',
 					'title' => 'Lund',
-					'type' => 'K',
+					'type'  => 'K',
 				],
 			]
 		);

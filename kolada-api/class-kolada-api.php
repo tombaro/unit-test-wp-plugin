@@ -55,11 +55,14 @@ class Kolada_API {
 			'GET',
 			'municipality',
 			[
-				'query' => [ 'title' => $key ],
+				'query' => [
+					'title' => $key,
+				],
 			]
 		);
 
 		$id = 0;
+
 		$municipality_object = json_decode( $response->getBody() );
 		foreach ( $municipality_object->values as $obj ) {
 			$id = $obj->id;

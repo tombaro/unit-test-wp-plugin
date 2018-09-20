@@ -21,6 +21,7 @@ class KoladaApi extends \PHPUnit_Framework_TestCase {
 	 */
 	public function test_get_municipality_data() {
 		$testvalue = 'lund';
+
 		$expected = 1241;
 
 		$get_m_data = $this->getFunctionMock( 'UnitTestDemo', 'get_municipality_data' );
